@@ -113,6 +113,21 @@
             document.getElementById("resultModal").style.display = "none"
         }
 
+        function fillPlacedExample() {
+            document.getElementsByName('Age')[0].value = 22; updateValue('age_val', 22);
+            document.getElementsByName('CGPA')[0].value = 8.5; updateValue('cgpa_val', '8.5');
+            document.getElementsByName('Communication_Skills')[0].value = 9; updateValue('comm_val', 9);
+            document.getElementsByName('Coding_Skills')[0].value = 9; updateValue('coding_val', 9);
+            document.getElementsByName('Soft_Skills_Rating')[0].value = 9; updateValue('soft_val', 9);
+            document.getElementsByName('Backlogs')[0].value = 0; updateValue('backlog_val', 0);
+            document.getElementsByName('Projects')[0].value = 3; updateValue('proj_val', 3);
+            document.getElementsByName('Certifications')[0].value = 2; updateValue('cert_val', 2);
+            document.getElementsByName('Aptitude_Test_Score')[0].value = 88; updateValue('apt_val', 88);
+            document.getElementsByName('Internships')[0].value = 2; updateValue('intern_val', 2);
+            document.getElementsByName('Gender')[0].value = 'Male';
+            document.getElementsByName('Degree')[0].value = 'B.Tech';
+        }
+
         window.onload = function () {
 
             var prediction = "{{ prediction | default('') }}"
@@ -226,7 +241,10 @@
 
             <br>
 
-            <button type="submit">Predict Placement</button>
+            <div style="display: flex; gap: 10px;">
+                <button type="submit">Predict Placement</button>
+                <button type="button" onclick="fillPlacedExample()" style="background: #28a745;">Placed Example</button>
+            </div>
 
         </form>
 
